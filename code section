@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(){
+    srand(time(NULL));
+    system("COLOR F0");
+    int z1,z2,T,ats,i,j;   // ats = atis sayisi z1,z2= zarlar
+    int dizi[11];
+    int d2=0,d3=0,d4=0,d5=0,d6=0,d7=0,d8=0,d9=0,d10=0,d11=0,d12=0;
+    
+    printf("Zar Kac Defa atilsin:\t ");
+    scanf("%d",&ats);
+
+    for(i=0;i<ats;i++){
+        z1 = rand() % 6 + 1;  
+        z2 = rand() % 6 + 1;
+        T = z1 + z2;    // T = toplam
+        switch(T){
+            case 2:d2++; break;        
+            case 3:d3++; break;       
+            case 4:d4++; break;       
+            case 5:d5++; break;
+            case 6:d6++; break;
+            case 7:d7++; break;
+            case 8:d8++; break;
+            case 9:d9++; break;
+            case 10:d10++; break;
+            case 11:d11++; break;
+            case 12:d12++; break;}
+    }
+    
+    
+    dizi[0]=d2,dizi[1]=d3,dizi[2]=d4,dizi[3]=d5,dizi[4]=d6,dizi[5]=d7;
+    dizi[6]=d8,dizi[7]=d9,dizi[8]=d10,dizi[9]=d11,dizi[10]=d12;
+    printf("Atis Sayisi %d\n",ats);
+    
+    for(i=2;i<=12;i++){
+        printf("%d: %d \t",i,dizi[i-2]);
+        for(j=1;j<=dizi[i-2];j++)
+            printf("*");
+
+        printf("\n");}
+    return 0;}
